@@ -8,15 +8,18 @@
 // constant array
 #include <array>
 
+void print_occurence_in_first_word(std::string sentence, char character);
+
 int main(void) {
-	int input_value{ 0 };
+	std::string input_value {""};
 
 	std::cout << "Give value boy !\n";
-	while (input_value == false) {
+	while (input_value.empty() == true) {
 		std::cin >> input_value;
 		std::cin.clear();
 		std::cin.ignore(255, '\n');
 	}
+	print_occurence_in_first_word(input_value, 'e');
 	return 0;
 }
 
@@ -96,6 +99,17 @@ void learn_iterator(void) {
 	// std::crbegin and std::crend exists.
 
 }
+
+void print_occurence_in_first_word(std::string sentence, char character) {
+	auto const separator{ ' ' };
+	auto const fword_end { std::find(std::begin(sentence), std::end(sentence), separator)};
+
+	auto const occurence_nbr{ std::count(std::begin(sentence), fword_end, character) };
+	std::cout << "nbr of occurence : " << occurence_nbr << std::endl;
+}
+
+/***** Visual Studio Tips *****/
+
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
 // Déboguer le programme : F5 ou menu Déboguer > Démarrer le débogage
 
