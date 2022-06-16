@@ -10,7 +10,7 @@
 
 void print_occurence_in_first_word(std::string sentence, char character);
 
-int main(void) {
+int main1(void) {
 	std::string input_value {""};
 
 	std::cout << "Give value boy !\n";
@@ -22,6 +22,7 @@ int main(void) {
 	print_occurence_in_first_word(input_value, 'e');
 	return 0;
 }
+
 
 int learn_vector(void) {
 	std::vector<int> int_array{ 1, 2, 3, 4 };
